@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
 
   display: flex;
   flex-direction: column;
@@ -8,16 +8,26 @@ body {
 }
 
 #centerArea {
-    flex: 1;
+  width: 100%;
+  max-width: 800px;
+
   display: flex;
   justify-content: center;
   align-items: center;
 
+  padding: 2%;
+  box-sizing: border-box;
 }
 
 #temp {
-  font-size: 3rem;
-  font-weight: bold;
-  background: rgba(255, 255, 255, 0.7);
-  padding: 20px 30px;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  white-space: nowrap;
+}
+
+@media (max-width: 1000px) {
+  #centerArea {
+    align-items: flex-start;
+    padding-top: 10%;
+  }
+
 }
